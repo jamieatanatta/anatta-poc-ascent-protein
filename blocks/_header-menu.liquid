@@ -679,6 +679,41 @@
     /* preserves the inherited grid layout when this submenu wrapper is used */
     display: contents;
   }
+
+  /* === Ascent Protein: Desktop menu link overrides === */
+  .menu-list {
+    --menu-horizontal-gap: 24px;
+  }
+
+  .menu-list__link-title {
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    line-height: 27px;
+  }
+
+  /* === Ascent Protein: Mobile drawer overrides === */
+  .menu-drawer-container {
+    background-color: rgb(242, 242, 242);
+  }
+
+  .menu-drawer__menu-item--mainlist {
+    min-height: 60px;
+  }
+
+  .menu-drawer__menu-item--mainlist .menu-drawer__menu-item-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0.4px;
+  }
+
+  .menu-drawer__menu-item--parent .menu-drawer__menu-item-text {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    color: rgb(88, 88, 88);
+  }
 {% endstylesheet %}
 
 {% schema %}

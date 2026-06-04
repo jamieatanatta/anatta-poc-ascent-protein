@@ -9,10 +9,10 @@
  */
  {
   "current": {
-    "logo_height": 36,
-    "logo_height_mobile": 28,
-    "type_body_font": "proxima_nova_n4",
-    "type_subheading_font": "proxima_nova_n4",
+    "logo_height": 38,
+    "logo_height_mobile": 32,
+    "type_body_font": "assistant_n4",
+    "type_subheading_font": "assistant_n4",
     "type_heading_font": "inter_n5",
     "type_accent_font": "ibm_plex_mono_n4",
     "type_size_paragraph": "16",
@@ -368,8 +368,10 @@
   },
   "presets": {
     "Default": {
-      "type_body_font": "proxima_nova_n4",
-      "type_subheading_font": "proxima_nova_n4",
+      "logo_height": 38,
+      "logo_height_mobile": 32,
+      "type_body_font": "assistant_n4",
+      "type_subheading_font": "assistant_n4",
       "type_heading_font": "inter_n5",
       "type_accent_font": "ibm_plex_mono_n4",
       "type_size_paragraph": "16",

@@ -1111,6 +1111,49 @@
     font-family: var(--menu-localization-font);
     font-size: var(--menu-localization-font-size);
   }
+
+  /* === Ascent Protein: Header height & spacing overrides === */
+  body {
+    --header-height: 64px;
+  }
+
+  .header .header__columns {
+    padding-inline: 70px;
+  }
+
+  .header__column--right {
+    gap: 24px;
+  }
+
+  @media screen and (max-width: 749px) {
+    body {
+      --header-height: 56px;
+    }
+
+    .header .header__columns {
+      padding-inline: 20px;
+    }
+
+    .header__column--left {
+      gap: 16px;
+    }
+
+    .header__column--right {
+      gap: 16px;
+    }
+  }
+
+  #header-component[data-menu-style='drawer'] .header .header__columns {
+    padding-inline: 20px;
+  }
+
+  #header-component[data-menu-style='drawer'] .header__column--left {
+    gap: 16px;
+  }
+
+  #header-component[data-menu-style='drawer'] .header__column--right {
+    gap: 16px;
+  }
 {% endstylesheet %}
 
 {% unless request.design_mode %}
