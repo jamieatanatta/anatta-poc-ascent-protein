@@ -1,0 +1,208 @@
+{% liquid
+  assign color_scheme = section.settings.color_scheme
+  assign icon_size = section.settings.icon_size
+%}
+
+<div class="value-props color-{{ color_scheme }}">
+  <div class="value-props__background section-background"></div>
+  <div
+    class="value-props__inner"
+    style="
+      --vp-padding-top: {{ section.settings.padding-block-start }}px;
+      --vp-padding-bottom: {{ section.settings.padding-block-end }}px;
+      --vp-icon-size: {{ icon_size }}px;
+    "
+  >
+    {% for block in section.blocks %}
+      <div
+        class="value-props__item{% if block.settings.hide_on_mobile %} value-props__item--hide-mobile{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.icon != blank %}
+          <img
+            class="value-props__icon"
+            src="{{ block.settings.icon | image_url: width: icon_size, height: icon_size }}"
+            alt="{{ block.settings.icon.alt | escape }}"
+            width="{{ icon_size }}"
+            height="{{ icon_size }}"
+            loading="lazy"
+          >
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <p class="value-props__text">{{ block.settings.text | escape }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% stylesheet %}
+.value-props {
+  position: relative;
+}
+
+.value-props__background {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-background);
+  z-index: -1;
+}
+
+.value-props__inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-block-start: var(--vp-padding-top, 6px);
+  padding-block-end: var(--vp-padding-bottom, 6px);
+}
+
+.value-props__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 33px;
+  max-width: 140px;
+}
+
+.value-props__icon {
+  width: var(--vp-icon-size, 32px);
+  height: var(--vp-icon-size, 32px);
+  object-fit: contain;
+}
+
+.value-props__text {
+  margin-block-start: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 15px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-foreground);
+}
+
+@media screen and (max-width: 749px) {
+  .value-props__inner {
+    padding-block: 16px;
+  }
+
+  .value-props__item {
+    margin: 12px;
+  }
+
+  .value-props__item--hide-mobile {
+    display: none;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Value props",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-8"
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 16,
+      "max": 64,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 6,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 6,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value-prop",
+      "name": "Value prop",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Value proposition"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_on_mobile",
+          "label": "Hide on mobile",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Value props",
+      "blocks": [
+        {
+          "type": "value-prop",
+          "settings": {
+            "text": "Value proposition",
+            "hide_on_mobile": false
+          }
+        },
+        {
+          "type": "value-prop",
+          "settings": {
+            "text": "Value proposition",
+            "hide_on_mobile": false
+          }
+        },
+        {
+          "type": "value-prop",
+          "settings": {
+            "text": "Value proposition",
+            "hide_on_mobile": false
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}
