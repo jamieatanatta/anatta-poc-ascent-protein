@@ -1,11 +1,13 @@
 <style>
-  /* Footer group background with topographic pattern */
-  .shopify-section-group-footer-group {
+  /* Footer background with topographic pattern — applied directly to <footer> so it
+     spans the full footer height (including the bottom bar) regardless of section group wrapper */
+  body > footer {
     background: #111111 url('{{ "ascent-blacktopo-4c6773b6-0293-4d0e-a9d2-b8cd28f1ee94-1200x--3d88da105048.jpg" | file_img_url: "master" }}') center / cover no-repeat;
   }
 
-  /* Make individual section backgrounds transparent so the group bg shows through */
-  .shopify-section-group-footer-group .section-background {
+  /* Make individual section backgrounds transparent so the footer bg shows through */
+  body > footer .section-background,
+  body > footer .custom-footer-bottom {
     background-color: transparent !important;
   }
 
@@ -18,18 +20,30 @@
     letter-spacing: 3px;
     line-height: 18px;
     font-family: var(--font-heading--family);
+    color: var(--color-foreground);
   }
 
-  /* Menu link typography overrides */
+  /* Menu link typography overrides — force white text (default would be primary/yellow) */
   .footer-content .menu__item {
     font-size: 14px;
     line-height: 22.5px;
     letter-spacing: 0.4px;
   }
 
+  .footer-content .menu__item a,
+  .footer-content .menu summary,
+  .footer-content a {
+    color: var(--color-foreground);
+  }
+
   .footer-content .menu__item a {
     padding: 4px 0;
     display: block;
+  }
+
+  .footer-content .menu__item a:hover,
+  .footer-content a:hover {
+    color: var(--color-primary);
   }
 
   /* Menu spacing override — reduce gap between links */

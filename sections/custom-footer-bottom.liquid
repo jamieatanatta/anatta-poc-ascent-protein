@@ -51,7 +51,13 @@
         </a>
       {%- endif -%}
 
-      {%- if section.settings.policy_menu != blank -%}
+      {%- liquid
+        assign has_policy_menu = false
+        if section.settings.policy_menu != blank and section.settings.policy_menu.links.size > 1
+          assign has_policy_menu = true
+        endif
+      -%}
+      {%- if has_policy_menu -%}
         <ul class="custom-footer-bottom__policies-list">
           {%- for link in section.settings.policy_menu.links -%}
             <li class="custom-footer-bottom__policy-item">
@@ -60,6 +66,19 @@
               {%- endif -%}
               <a href="{{ link.url }}">{{ link.title }}</a>
             </li>
+          {%- endfor -%}
+        </ul>
+      {%- elsif shop.policies.size > 0 -%}
+        <ul class="custom-footer-bottom__policies-list">
+          {%- for policy in shop.policies -%}
+            {%- if policy.body != blank -%}
+              <li class="custom-footer-bottom__policy-item">
+                {%- if forloop.first == false -%}
+                  <span class="custom-footer-bottom__separator" aria-hidden="true">|</span>
+                {%- endif -%}
+                <a href="{{ policy.url }}">{{ policy.title }}</a>
+              </li>
+            {%- endif -%}
           {%- endfor -%}
         </ul>
       {%- endif -%}
