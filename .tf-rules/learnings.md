@@ -1,0 +1,4 @@
+## Recent
+[chat] Horizon's base `a { color: var(--color-primary) }` rule means ALL links default to the scheme's PRIMARY color (often a brand accent like yellow), NOT foreground/white. Inside dark footer/header sections, always explicitly override link color to `var(--color-foreground)` or the visual intent breaks (links render in accent color).
+[chat] In OS 2.0 themes, applying section-group backgrounds via `.shopify-section-group-footer-group` is unreliable — the wrapper class doesn't always extend full height when individual sections have their own backgrounds. Apply directly to `body > footer` element and force section-level backgrounds to transparent for consistent full-height coverage.
+[chat] When a section's `link_list` setting (e.g., `policy_menu`) might be empty or unconfigured, fall back to `shop.policies` to auto-render Shopify's built-in legal pages (refund, privacy, terms, shipping). Don't assume the merchant has populated a separate menu for policies.
