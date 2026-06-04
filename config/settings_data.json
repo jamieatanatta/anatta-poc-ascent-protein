@@ -9,8 +9,8 @@
  */
  {
   "current": {
-    "logo_height": 36,
-    "logo_height_mobile": 28,
+    "logo_height": 38,
+    "logo_height_mobile": 32,
     "type_body_font": "proxima_nova_n4",
     "type_subheading_font": "proxima_nova_n4",
     "type_heading_font": "inter_n5",
@@ -368,6 +368,8 @@
   },
   "presets": {
     "Default": {
+      "logo_height": 38,
+      "logo_height_mobile": 32,
       "type_body_font": "proxima_nova_n4",
       "type_subheading_font": "proxima_nova_n4",
       "type_heading_font": "inter_n5",
