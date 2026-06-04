@@ -1,0 +1,222 @@
+<div
+  class="custom-footer-bottom color-{{ section.settings.color_scheme }}"
+  style="
+    --cfb-padding-top: {{ section.settings.padding_top }}px;
+    --cfb-padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="custom-footer-bottom__inner">
+    <div class="custom-footer-bottom__left">
+      {%- if section.settings.copyright_text != blank -%}
+        <p class="custom-footer-bottom__copyright">
+          {{ section.settings.copyright_text }} {{ 'now' | date: '%Y' }} {{ shop.name }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="custom-footer-bottom__right">
+      {%- if section.settings.badge_image != blank -%}
+        <a
+          class="custom-footer-bottom__badge-link"
+          href="{{ section.settings.badge_link }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{
+            section.settings.badge_image
+            | image_url: width: 160
+            | image_tag:
+              class: 'custom-footer-bottom__badge',
+              alt: 'Reviewed by Allyant for Accessibility',
+              loading: 'lazy',
+              widths: '80,160',
+              sizes: '80px'
+          }}
+        </a>
+      {%- else -%}
+        <a
+          class="custom-footer-bottom__badge-link"
+          href="{{ section.settings.badge_link }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="custom-footer-bottom__badge"
+            src="{{ 'allyant-badge-780741d02a85.svg' | asset_url }}"
+            alt="Reviewed by Allyant for Accessibility"
+            loading="lazy"
+            width="80"
+            height="80"
+          >
+        </a>
+      {%- endif -%}
+
+      {%- if section.settings.policy_menu != blank -%}
+        <ul class="custom-footer-bottom__policies-list">
+          {%- for link in section.settings.policy_menu.links -%}
+            <li class="custom-footer-bottom__policy-item">
+              {%- if forloop.first == false -%}
+                <span class="custom-footer-bottom__separator" aria-hidden="true">|</span>
+              {%- endif -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .custom-footer-bottom {
+    padding-block-start: var(--cfb-padding-top, 20px);
+    padding-block-end: var(--cfb-padding-bottom, 30px);
+  }
+
+  .custom-footer-bottom__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: var(--narrow-page-width);
+    margin-inline: auto;
+    padding-inline: var(--page-margin);
+  }
+
+  .custom-footer-bottom__copyright {
+    font-size: 11px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  .custom-footer-bottom__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .custom-footer-bottom__badge-link {
+    display: inline-block;
+  }
+
+  .custom-footer-bottom__badge {
+    width: 80px;
+    height: 80px;
+    display: block;
+  }
+
+  .custom-footer-bottom__policies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0.7;
+  }
+
+  .custom-footer-bottom__policy-item {
+    font-size: 11px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-block-end: 2.75px;
+  }
+
+  .custom-footer-bottom__policy-item a {
+    margin-inline: 5px;
+  }
+
+  .custom-footer-bottom__separator {
+    margin-inline-end: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .custom-footer-bottom__inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .custom-footer-bottom__left {
+      margin-block-end: 8px;
+    }
+
+    .custom-footer-bottom__right {
+      align-items: center;
+      flex-direction: column-reverse;
+      gap: 16px;
+    }
+
+    .custom-footer-bottom__policies-list {
+      justify-content: center;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Footer bottom bar",
+  "tag": "section",
+  "class": "section-wrapper",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-7"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© ALL RIGHTS RESERVED COPYRIGHT"
+    },
+    {
+      "type": "link_list",
+      "id": "policy_menu",
+      "label": "Policy menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Badge image"
+    },
+    {
+      "type": "url",
+      "id": "badge_link",
+      "label": "Badge link"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    }
+  ]
+}
+{% endschema %}
