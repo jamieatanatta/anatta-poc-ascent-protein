@@ -1,0 +1,69 @@
+<style>
+  /* Footer group background with topographic pattern */
+  .shopify-section-group-footer-group {
+    background: #111111 url('{{ "ascent-blacktopo-4c6773b6-0293-4d0e-a9d2-b8cd28f1ee94-1200x--3d88da105048.jpg" | file_img_url: "master" }}') center / cover no-repeat;
+  }
+
+  /* Make individual section backgrounds transparent so the group bg shows through */
+  .shopify-section-group-footer-group .section-background {
+    background-color: transparent !important;
+  }
+
+  /* Menu heading typography overrides */
+  .footer-content .menu__heading__default,
+  .footer-content .menu__heading__accordion {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 18px;
+    font-family: var(--font-heading--family);
+  }
+
+  /* Menu link typography overrides */
+  .footer-content .menu__item {
+    font-size: 14px;
+    line-height: 22.5px;
+    letter-spacing: 0.4px;
+  }
+
+  .footer-content .menu__item a {
+    padding: 4px 0;
+    display: block;
+  }
+
+  /* Menu spacing override — reduce gap between links */
+  .footer-content .menu__list {
+    gap: 4px;
+  }
+
+  /* Social icon styling */
+  .footer-content .social-icons__wrapper {
+    gap: 15px;
+  }
+
+  .footer-content .social-icons__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Desktop: logo as first grid column via CSS order */
+  @media screen and (min-width: 750px) {
+    .footer-content > .logo-block {
+      order: -1;
+    }
+  }
+
+  /* Mobile overrides */
+  @media screen and (max-width: 749px) {
+    .footer-content > .logo-block {
+      order: 99;
+      justify-self: center;
+      padding-block-start: 20px;
+    }
+
+    .footer-content .social-icons__wrapper {
+      display: none;
+    }
+  }
+</style>
