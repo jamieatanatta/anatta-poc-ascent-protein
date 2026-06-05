@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/lep-2016-logo-master-stack-rev-x120-2x-add383009e07.png",
+    "logo": "shopify://shop_images/logo-mobile-bb2a0a34-39a6-49c4-bbb4-44384cf92db8-b6ab9418362f.png",
     "logo_height": 38,
     "logo_height_mobile": 32,
     "type_body_font": "assistant_n4",
@@ -447,7 +447,7 @@
   },
   "presets": {
     "Default": {
-      "logo": "shopify://shop_images/lep-2016-logo-master-stack-rev-x120-2x-add383009e07.png",
+      "logo": "shopify://shop_images/logo-mobile-bb2a0a34-39a6-49c4-bbb4-44384cf92db8-b6ab9418362f.png",
       "logo_height": 38,
       "logo_height_mobile": 32,
       "type_body_font": "assistant_n4",
