@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/lep-2016-logo-master-stack-rev-x120-2x-add383009e07.png",
+    "logo": "shopify://shop_images/logo-mobile-bb2a0a34-39a6-49c4-bbb4-44384cf92db8-b6ab9418362f.png",
     "logo_height": 38,
     "logo_height_mobile": 32,
     "type_body_font": "assistant_n4",
@@ -403,12 +403,51 @@
           "selected_variant_hover_text_color": "#1A1A1A",
           "selected_variant_hover_border_color": "#e6d800"
         }
+      },
+      "scheme-8": {
+        "settings": {
+          "background": "#00000E",
+          "foreground_heading": "#ffffff",
+          "foreground": "#ffffff",
+          "primary": "#FBEC00",
+          "primary_hover": "#FFCA2D",
+          "border": "#333333",
+          "shadow": "#000000",
+          "primary_button_background": "#FBEC00",
+          "primary_button_text": "#00000E",
+          "primary_button_border": "#FBEC00",
+          "primary_button_hover_background": "#e6d800",
+          "primary_button_hover_text": "#00000E",
+          "primary_button_hover_border": "#e6d800",
+          "secondary_button_background": "rgba(0,0,0,0)",
+          "secondary_button_text": "#ffffff",
+          "secondary_button_border": "#ffffff",
+          "secondary_button_hover_background": "#33333380",
+          "secondary_button_hover_text": "#ffffff",
+          "secondary_button_hover_border": "#ffffff",
+          "input_background": "#00000E",
+          "input_text_color": "#ffffff",
+          "input_border_color": "#333333",
+          "input_hover_background": "#33333380",
+          "variant_background_color": "#333333",
+          "variant_text_color": "#ffffff",
+          "variant_border_color": "#4A4A4A",
+          "variant_hover_background_color": "#4A4A4A",
+          "variant_hover_text_color": "#ffffff",
+          "variant_hover_border_color": "#4A4A4A",
+          "selected_variant_background_color": "#FBEC00",
+          "selected_variant_text_color": "#00000E",
+          "selected_variant_border_color": "#FBEC00",
+          "selected_variant_hover_background_color": "#e6d800",
+          "selected_variant_hover_text_color": "#00000E",
+          "selected_variant_hover_border_color": "#e6d800"
+        }
       }
     }
   },
   "presets": {
     "Default": {
-      "logo": "shopify://shop_images/lep-2016-logo-master-stack-rev-x120-2x-add383009e07.png",
+      "logo": "shopify://shop_images/logo-mobile-bb2a0a34-39a6-49c4-bbb4-44384cf92db8-b6ab9418362f.png",
       "logo_height": 38,
       "logo_height_mobile": 32,
       "type_body_font": "assistant_n4",
@@ -770,6 +809,45 @@
             "selected_variant_border_color": "#FBEC00",
             "selected_variant_hover_background_color": "#e6d800",
             "selected_variant_hover_text_color": "#1A1A1A",
+            "selected_variant_hover_border_color": "#e6d800"
+          }
+        },
+        "scheme-8": {
+          "settings": {
+            "background": "#00000E",
+            "foreground_heading": "#ffffff",
+            "foreground": "#ffffff",
+            "primary": "#FBEC00",
+            "primary_hover": "#FFCA2D",
+            "border": "#333333",
+            "shadow": "#000000",
+            "primary_button_background": "#FBEC00",
+            "primary_button_text": "#00000E",
+            "primary_button_border": "#FBEC00",
+            "primary_button_hover_background": "#e6d800",
+            "primary_button_hover_text": "#00000E",
+            "primary_button_hover_border": "#e6d800",
+            "secondary_button_background": "rgba(0,0,0,0)",
+            "secondary_button_text": "#ffffff",
+            "secondary_button_border": "#ffffff",
+            "secondary_button_hover_background": "#33333380",
+            "secondary_button_hover_text": "#ffffff",
+            "secondary_button_hover_border": "#ffffff",
+            "input_background": "#00000E",
+            "input_text_color": "#ffffff",
+            "input_border_color": "#333333",
+            "input_hover_background": "#33333380",
+            "variant_background_color": "#333333",
+            "variant_text_color": "#ffffff",
+            "variant_border_color": "#4A4A4A",
+            "variant_hover_background_color": "#4A4A4A",
+            "variant_hover_text_color": "#ffffff",
+            "variant_hover_border_color": "#4A4A4A",
+            "selected_variant_background_color": "#FBEC00",
+            "selected_variant_text_color": "#00000E",
+            "selected_variant_border_color": "#FBEC00",
+            "selected_variant_hover_background_color": "#e6d800",
+            "selected_variant_hover_text_color": "#00000E",
             "selected_variant_hover_border_color": "#e6d800"
           }
         }

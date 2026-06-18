@@ -1117,12 +1117,46 @@
     --header-height: 64px;
   }
 
+  .header {
+    color: #000000;
+  }
+
   .header .header__columns {
     padding-inline: 70px;
   }
 
+  .header__column--left {
+    gap: 0;
+  }
+
   .header__column--right {
     gap: 24px;
+  }
+
+  /* === Ascent Protein: Header actions icon sizing === */
+  .header-actions__action .svg-wrapper {
+    width: 23px;
+    height: 23px;
+  }
+
+  .header-actions__action .svg-wrapper svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .account-button__icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .header-actions__cart-icon .svg-wrapper {
+    width: 28px;
+    height: 28px;
+  }
+
+  .header-actions__cart-icon .svg-wrapper svg {
+    width: 28px;
+    height: 28px;
   }
 
   @media screen and (max-width: 749px) {
@@ -1140,6 +1174,16 @@
 
     .header__column--right {
       gap: 16px;
+    }
+
+    .header-actions__cart-icon .svg-wrapper {
+      width: 30px;
+      height: 30px;
+    }
+
+    .header-actions__cart-icon .svg-wrapper svg {
+      width: 30px;
+      height: 30px;
     }
   }
 
